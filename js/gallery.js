@@ -73,8 +73,8 @@ function createGallery(images) {
    <a class="gallery-link" href="${preview}">
     <img
        class="gallery-image"
-      src="${original}"
-      data-source="${preview}"
+      src="${preview}"
+      data-source="${original}"
       alt="${description}"
     />
   </a>
@@ -99,7 +99,7 @@ function galleryClick(event) {
   event.preventDefault();
   if (event.target.classList.contains("gallery-image")) {
     const targetImage = event.target.closest('.gallery-image');
-    const largeImage = targetImage.src;
+    const largeImage = targetImage.dataset.source;
     openModalWindow(largeImage);
   }
 }
